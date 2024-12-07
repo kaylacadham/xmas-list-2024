@@ -1,0 +1,353 @@
+<!--TO DO
+[_] Add more items & their details
+[_] adjust fonts and font size (find a card template)
+[_] Add candy canes
+[x] add mobile sizing, esp for header height
+[_] pick a better background
+[_] add music element
+[_] Add mouse animation
+[_] Add animation for cards to pop in
+[_] Add snow
+[?] Add blinking christmas lights
+[_] Add wishlist items like cookies or a nice card, or skating
+[x] maybe remove background of the price on each? again - template!
+[x] mobile: one item at a time, scrolling down
+[_] might wanna set a max width for desktop
+[_] add button styling for hover and active and visited
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kayla's Christmas Wishlist</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Barrio&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <p class="headertext">&#10024; <span id="countdown"></span> Days Left Until Christmas &#10024;</p>
+            <script>
+            // Set the date we're counting down to
+            var countDownDate = new Date("Dec 25, 2024 00:00:00").getTime();
+                
+            // Update the count down every 1 second
+            var x = setInterval(function() {
+                
+                // Get today's date and time
+                var now = new Date().getTime();
+                    
+                // Find the distance between now and the count down date
+                var distance = countDownDate - now;
+                    
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                    
+                // Output the result in an element with id="countdown"
+                document.getElementById("countdown").innerHTML = days;
+                    
+                // If the count down is over, write some text 
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("countdown").innerHTML = "EXPIRED";
+                }
+
+                }, 0); //interval in ms
+            </script>
+        </header>
+        <main>
+            <section id="hero">
+                <div id="title">
+                    <h1 class="barrio-regular">All Kayla Wants For Christmas is...</h1>
+                </div>
+                <audio id="player" loop>
+                    <source src="Media/jingle-bells-christmas-holidays-celebration-background-intro-theme-265841.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <div id="jingle">
+                    <button onclick="document.getElementById('player').play()">Play Music</button> 
+                    <button onclick="document.getElementById('player').pause()">Pause Music</button>
+                </div>
+            </section>
+            <section id="wishlist">
+                <!--Item #1-->
+                <div class="container">
+                    <div class="content1">
+                        <a href="https://www.indigo.ca/en-ca/say-nothing-a-true-story-of-murder-and-memory-in-northern-ireland/9780307279286.html" target="_blank">
+                            <img class="item-image" src="Media/say-nothing.jpg" alt="Cover of the book Say Nothing by Patrick Radden Keefe" height="200"/>
+                        </a>
+                    </div>
+                    <div class="content2">
+                        <div>
+                            <h2 class="item-title">Say Nothing</h2>
+                            <h3 class="item-price">$27.99</h3>
+                            <p class="description">A good book, now a tv series. Makes a nice gift.</p>
+                        </div>
+                        <div>
+                            <a class="button" href="https://www.indigo.ca/en-ca/say-nothing-a-true-story-of-murder-and-memory-in-northern-ireland/9780307279286.html" target="_blank">See on indigo.ca</a>
+                        </div>
+                    </div>
+                </div>
+                <!--Item #2-->
+                <div class="container">
+                    <div class="content1">
+                        <a href="https://www.indigo.ca/en-ca/the-well-of-ascension-book-two-of-mistborn/9781250318572.html" target="_blank">
+                            <img class="item-image" src="Media/wellofascension.png" alt="Cover of the book The Well of Ascension by Brandon Sanderson" height="200"/>
+                        </a>
+                    </div>
+                    <div class="content2">
+                        <div>
+                            <h2 class="item-title">Well of Ascension</h2>
+                            <h3 class="item-price">#15.99</h3>
+                            <p class="description">Book #2 in the Mistborn Series &#40;check with Dano&#41;.</p>
+                        </div>
+                        <div>
+                            <a class="button" href="https://www.indigo.ca/en-ca/the-well-of-ascension-book-two-of-mistborn/9781250318572.html" target="_blank">See on indigo.ca</a>
+                        </div>
+                    </div>
+                </div>
+                <!--Item #3-->
+                <div class="container">
+                    <div class="content1">
+                        <a href="https://www.indigo.ca/en-ca/the-hero-of-ages-book-three-of-mistborn/9781250318626.html" target="_blank">
+                            <img class="item-image" src="Media/heroofages.png" alt="Cover of the book Hero of Ages by Brandon Sanderson" height="200"/>
+                        </a>
+                    </div>
+                    <div class="content2">
+                        <div>
+                            <h2 class="item-title">Hero Of Ages</h2>
+                            <h3 class="item-price">$27.99</h3>
+                            <p class="description">Book #3 in the Mistborn Series &#40;Check with Dano&#41;</p>
+                        </div>
+                        <div>
+                            <a class="button" href="https://www.indigo.ca/en-ca/the-hero-of-ages-book-three-of-mistborn/9781250318626.html" target="_blank">See on indigo.ca</a>
+                        </div>
+                    </div>
+                </div>
+                <!--Item #4-->
+                <div class="container">
+                    <div class="content1">
+                        <a href="https://www.indigo.ca/en-ca/circe/9780316556323.html" target="_blank">
+                            <img class="item-image" src="Media/circe.png" alt="Cover of the book Circe by Madeline Miller" height="200"/>
+                        </a>
+                    </div>
+                    <div class="content2">
+                        <div>
+                            <h2 class="item-title">Circe</h2>
+                            <h3 class="item-price">$23.99</h3>
+                            <p class="description">I've listened to the audiobook, and I'd love to have this book on my shelf.</p>
+                        </div>
+                        <div>
+                            <a class="button" href="https://www.indigo.ca/en-ca/circe/9780316556323.html" target="_blank">See on indigo.ca</a>
+                        </div>
+                    </div>
+                </div>
+                <!--Item #5-->
+                <div class="container">
+                    <div class="content1">
+                        <a href="https://well.ca/products/kristin-ess-chrome-gold-french-pin_183432.html" target="_blank">
+                            <img class="item-image" src="Media/hairpins.png" alt="Two Gold Kristen Ess hair pins in box" height="200"/>
+                        </a>
+                    </div>
+                    <div class="content2">
+                        <div>
+                            <h2 class="item-title">French Pins</h2>
+                            <h3 class="item-price">$14.96</h3>
+                            <p class="description">I had a couple of these but I lost them and I've been missing them ever since.</p>
+                        </div>
+                        <div>
+                            <a class="button" href="https://well.ca/products/kristin-ess-chrome-gold-french-pin_183432.html" target="_blank">See on well.ca</a>
+                        </div>
+                    </div>
+                </div>
+                <!--Item #6-->
+                <div class="container">
+                    <div class="content1">
+                        <a href="https://www.amazon.ca/Kitsch-School-Heatless-Curling-Perfect/dp/B0CF76VGD5/ref=zg_bs_c_beauty_d_sccl_6/143-7847049-8391356?pd_rd_w=q9HKC&content-id=amzn1.sym.d28d46a2-101c-44f1-978c-068143f1419e&pf_rd_p=d28d46a2-101c-44f1-978c-068143f1419e&pf_rd_r=09AAKCD1GCKC1JTG9B21&pd_rd_wg=3oC6y&pd_rd_r=2ff6d4f8-732c-44fb-a62b-52c7f96943e5&pd_rd_i=B09S4PVZ81&th=1" target="_blank">
+                            <img class="item-image" src="Media/heatlesscurls.jpg" alt="XL Kitsch Heatless Curl Set in Box" height="200" width="150"/>
+                        </a>
+                    </div>
+                    <div class="content2">
+                        <div>
+                            <h2 class="item-title">Heatless Curl Set</h2>
+                            <h3 class="item-price">$26.99</h3>
+                            <p class="description">Like hair rollers, but cuter.</p>
+                        </div>
+                        <div>
+                            <a class="button" href="https://www.amazon.ca/Kitsch-School-Heatless-Curling-Perfect/dp/B0CF76VGD5/ref=zg_bs_c_beauty_d_sccl_6/143-7847049-8391356?pd_rd_w=q9HKC&content-id=amzn1.sym.d28d46a2-101c-44f1-978c-068143f1419e&pf_rd_p=d28d46a2-101c-44f1-978c-068143f1419e&pf_rd_r=09AAKCD1GCKC1JTG9B21&pd_rd_wg=3oC6y&pd_rd_r=2ff6d4f8-732c-44fb-a62b-52c7f96943e5&pd_rd_i=B09S4PVZ81&th=1" target="_blank">See on amazon.ca</a>
+                        </div>
+                    </div>
+                </div>
+                <!--Item #7-->
+                <div class="container">
+                    <div class="content1">
+                        <a href="https://www.bcliquorstores.com/product/322076" target="_blank">
+                            <img class="item-image" src="Media/empressgin.jpg" alt="Bottle of Empress 1908 Cucumber Lemon Gin" height="200"/>
+                        </a>
+                    </div>
+                    <div class="content2">
+                        <div>
+                            <h2 class="item-title">Empress Cucumber Lemon Gin</h2>
+                            <h3 class="item-price">$54.99</h3>
+                            <p class="description">Empress released this flavour of their gin and I've never tried it before. Cheers!</p>
+                        </div>
+                        <div>
+                            <a class="button" href="https://www.bcliquorstores.com/product/322076" target="_blank">Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!--Item #8-->
+                <div class="container">
+                    <div class="content1">
+                        <a href="https://www.bcliquorstores.com/product/83028" target="_blank">
+                            <img class="item-image" src="Media/irishgin.jpg" alt="Drumshanbo Gunpowder Irish Gin in a beautiful blue bottle" height="200"/>
+                        </a>
+                    </div>
+                    <div class="content2">
+                        <div>
+                            <h2 class="item-title">Drumshanbo Gunpowder Irish Gin</h2>
+                            <h3 class="item-price">$46.99</h3>
+                            <p class="description">Crafted in County Leitrim with gunpowder tea and a blend of exotic botanicals. Sláinte!</p>
+                        </div>
+                        <div>
+                            <a class="button" href="https://www.bcliquorstores.com/product/83028" target="_blank">Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!--Item #9-->
+                <div class="container">
+                    <div class="content1">
+                        <a href="https://www.bcliquorstores.com/product/411072" target="_blank">
+                            <img class="item-image" src="Media/lemonbombay.jpg" alt="Bottle of Bombay Presse Mediterranean Lemon" height="200"/>
+                        </a>
+                    </div>
+                    <div class="content2">
+                        <div>
+                            <h2 class="item-title">Bombay Mediterranean Lemon</h2>
+                            <h3 class="item-price">$33.99</h3>
+                            <p class="description">Like a Tom Collins in a bottle, with a flavour fit for the Italian seaside. Salute!</p>
+                        </div>
+                        <div>
+                            <a class="button" href="https://www.bcliquorstores.com/product/411072" target="_blank">Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!--Item #10-->
+                <div class="container">
+                    <div class="content1">
+                        <a href="https://a.co/d/e5zK6dY" target="_blank">
+                            <img class="item-image" src="Media/pens.jpg" alt="Box of Uniball Zento Pens" height="200"/>
+                        </a>
+                    </div>
+                    <div class="content2">
+                        <div>
+                            <h2 class="item-title">Some nice pens</h2>
+                            <h3 class="item-price">$20.62</h3>
+                            <p class="description">Would love any black-ink pen that doesn't smudge. Even just one pen would be good!</p>
+                        </div>
+                        <div>
+                            <a class="button" href="https://a.co/d/e5zK6dY" target="_blank">See on amazon.ca</a>
+                        </div>
+                    </div>
+                </div>
+                <!--Item #11-->
+                <div class="container">
+                    <div class="content1">
+                        <a href="https://a.co/d/bOk2yxN" target="_blank">
+                            <img class="item-image" src="Media/polaroidmini.jpg" alt="Polaroid Film" height="200"/>
+                        </a>
+                    </div>
+                    <div class="content2">
+                        <div>
+                            <h2 class="item-title">Polaroid Film</h2>
+                            <h3 class="item-price">$23.98</h3>
+                            <p class="description">Film for my Instax Mini.</p>
+                        </div>
+                        <div>
+                            <a class="button" href="https://a.co/d/bOk2yxN" target="_blank">See on amazon.ca</a>
+                        </div>
+                    </div>
+                </div>
+                <!--Item #12-->
+                <div class="container">
+                    <div class="content1">
+                        <a href="https://a.co/d/1kxwgHn" target="_blank">
+                            <img class="item-image" src="Media/filmminibw.jpg" alt="Polaroid Film" height="200"/>
+                        </a>
+                    </div>
+                    <div class="content2">
+                        <div>
+                            <h2 class="item-title">Polaroid Film &#40;B&W&#41;</h2>
+                            <h3 class="item-price">$14.99</h3>
+                            <p class="description">Film for my Instax Mini, but monochrome.</p>
+                        </div>
+                        <div>
+                            <a class="button" href="https://a.co/d/1kxwgHn" target="_blank">See on amazon.ca</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!--SNOWFLAKES courtesy of @pavelthecoder-->
+        <style>
+            /* customizable snowflake styling */
+            .snowflake {
+              color: #fff;
+              font-size: 2em;
+              font-family: Arial, sans-serif;
+              text-shadow: 0 0 5px #FFF;
+            }
+            
+            .snowflake,.snowflake .inner{animation-iteration-count:infinite;animation-play-state:running}@keyframes snowflakes-fall{0%{transform:translateY(0)}100%{transform:translateY(110vh)}}@keyframes snowflakes-shake{0%,100%{transform:translateX(0)}50%{transform:translateX(80px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;user-select:none;cursor:default;animation-name:snowflakes-shake;animation-duration:3s;animation-timing-function:ease-in-out}.snowflake .inner{animation-duration:10s;animation-name:snowflakes-fall;animation-timing-function:linear}.snowflake:nth-of-type(0){left:1%;animation-delay:0s}.snowflake:nth-of-type(0) .inner{animation-delay:0s}.snowflake:first-of-type{left:10%;animation-delay:1s}.snowflake:first-of-type .inner,.snowflake:nth-of-type(8) .inner{animation-delay:1s}.snowflake:nth-of-type(2){left:20%;animation-delay:.5s}.snowflake:nth-of-type(2) .inner,.snowflake:nth-of-type(6) .inner{animation-delay:6s}.snowflake:nth-of-type(3){left:30%;animation-delay:2s}.snowflake:nth-of-type(11) .inner,.snowflake:nth-of-type(3) .inner{animation-delay:4s}.snowflake:nth-of-type(4){left:40%;animation-delay:2s}.snowflake:nth-of-type(10) .inner,.snowflake:nth-of-type(4) .inner{animation-delay:2s}.snowflake:nth-of-type(5){left:50%;animation-delay:3s}.snowflake:nth-of-type(5) .inner{animation-delay:8s}.snowflake:nth-of-type(6){left:60%;animation-delay:2s}.snowflake:nth-of-type(7){left:70%;animation-delay:1s}.snowflake:nth-of-type(7) .inner{animation-delay:2.5s}.snowflake:nth-of-type(8){left:80%;animation-delay:0s}.snowflake:nth-of-type(9){left:90%;animation-delay:1.5s}.snowflake:nth-of-type(9) .inner{animation-delay:3s}.snowflake:nth-of-type(10){left:25%;animation-delay:0s}.snowflake:nth-of-type(11){left:65%;animation-delay:2.5s}
+        </style>
+        <div class="snowflakes" aria-hidden="true">
+            <div class="snowflake">
+                <div class="inner">❅</div>
+            </div>
+            <div class="snowflake">
+                <div class="inner">❅</div>
+            </div>
+            <div class="snowflake">
+                <div class="inner">❅</div>
+            </div>
+            <div class="snowflake">
+                <div class="inner">❅</div>
+            </div>
+            <div class="snowflake">
+                <div class="inner">❅</div>
+            </div>
+            <div class="snowflake">
+                <div class="inner">❅</div>
+            </div>
+            <div class="snowflake">
+                <div class="inner">❅</div>
+            </div>
+            <div class="snowflake">
+                <div class="inner">❅</div>
+            </div>
+            <div class="snowflake">
+                <div class="inner">❅</div>
+            </div>
+            <div class="snowflake">
+                <div class="inner">❅</div>
+            </div>
+            <div class="snowflake">
+                <div class="inner">❅</div>
+            </div>
+            <div class="snowflake">
+                <div class="inner">❅</div>
+            </div>
+        </div>
+        <!--END SNOWFLAKES-->
+        <footer>
+            <p>Made by Kayla &#9825; v1.0</p>
+        </footer>
+    </body>
+</html>
