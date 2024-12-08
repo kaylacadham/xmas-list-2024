@@ -2,19 +2,6 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
-/* 
-darkgreen: #022402;
-darkteal: #004643;
-light-teal: #abd1c6;
-darkred: #8f0202;
-winterblue: 
-brighter-red: #fa5246;
-orange-red: #e16162;
-yellow: #f9bc60;
-white: #fffffe;
-*/
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -238,6 +225,11 @@ header {
     #wishlist {
         max-width: 90%;
     }
+	
+    footer {
+	text-align: center;
+    }
+		
   }
 
   @media only screen and (max-width: 680px) {
